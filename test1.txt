@@ -1,0 +1,58 @@
+LabClass co452lab = new LabClass(3);
+co452lab.setInstructor("Nicholas Day");
+co452lab.setRoom("G400");
+co452lab.setTime("29 th September 2020");
+Student student1 = new Student("Yamin Hassn", "55454");
+Student student2 = new Student("Natasha Saal", "7787");
+Student student3 = new Student("Kate Madilton", "54444");
+Course course1 = new Course();
+course1.setCode("G100");
+course1.setTitle("Computing");
+student1.addCredits(20);
+student3.addCredits(20);
+student3.addCredits(20);
+student1.changeName("Sanam Saeed");
+co452lab.enrollStudent(student1);
+co452lab.enrollStudent(student2);
+co452lab.enrollStudent(student3);
+co452lab.numberOfStudents()
+    returned int 3
+co452lab.printList();
+Lab class 29 th September 2020
+Instructor: Nicholas Day   Room: G400
+Class list:
+Sanam Saeed, student ID: 55454, credits: 20course:null
+Natasha Saal, student ID: 7787, credits: 0course:null
+Kate Madilton, student ID: 54444, credits: 40course:null
+Number of students: 3
+student1.enrolOnCourse(course1);
+student2.enrolOnCourse(course1);
+student3.enrolOnCourse(course1);
+student3.print();
+Kate Madilton, student ID: 54444, credits: 40course:Course@7088bd7f
+co452lab.printList();
+Lab class 29 th September 2020
+Instructor: Nicholas Day   Room: G400
+Class list:
+Sanam Saeed, student ID: 55454, credits: 20course:Course@7088bd7f
+Natasha Saal, student ID: 7787, credits: 0course:Course@7088bd7f
+Kate Madilton, student ID: 54444, credits: 40course:Course@7088bd7f
+Number of students: 3
+student1.getName()
+    returned String "Sanam Saeed"
+student2.getStudentID()
+    returned String "7787"
+co452lab.printList();
+Lab class 29 th September 2020
+Instructor: Nicholas Day   Room: G400
+Class list:
+Sanam Saeed, student ID: 55454, credits: 20course:Course@7088bd7f
+Natasha Saal, student ID: 7787, credits: 0course:Course@7088bd7f
+Kate Madilton, student ID: 54444, credits: 40course:Course@7088bd7f
+Number of students: 3
+student1.print();
+Sanam Saeed, student ID: 55454, credits: 20course:Course@7088bd7f
+student2.print();
+Natasha Saal, student ID: 7787, credits: 0course:Course@7088bd7f
+student3.print();
+Kate Madilton, student ID: 54444, credits: 40course:Course@7088bd7f
