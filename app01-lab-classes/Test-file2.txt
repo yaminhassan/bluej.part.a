@@ -1,0 +1,33 @@
+Course course1 = new Course();
+Student student1 = new Student("ya", "55");
+Course course1 = new Course();
+course1.setCode("G400");
+course1.setTitle("Computing");
+student1.enrolOnCourse(course1);
+Course course1 = new Course();
+course1.getcourse("G400")
+    returned String "G400"
+LabClass co452lab = new LabClass(3);
+co452lab.numberOfStudents()
+    returned int 0
+co452lab.setInstructor("Nick Day");
+co452lab.setRoom("G100");
+co452lab.setTime("29th September 2020");
+Student student1 = new Student("Yamin Hassan", "54545");
+Student student2 = new Student("Hill", "5445");
+Student student3 = new Student("Laila Chad", "787878");
+co452lab.enrollStudent(student1);
+co452lab.enrollStudent(student2);
+co452lab.enrollStudent(student3);
+student1.addCredits(20);
+student2.addCredits(20);
+student3.addCredits(20);
+student1.getLoginName()
+    returned String "Yami545"
+student1.changeName("Stewart Spring");
+Course course1 = new Course();
+student1.enrolOnCourse(course1);
+student2.enrolOnCourse(course1);
+student3.enrolOnCourse(course1);
+course1.setCode("G400");
+course1.setTitle("Computing");
