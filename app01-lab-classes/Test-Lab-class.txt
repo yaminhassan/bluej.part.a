@@ -1,0 +1,44 @@
+LabClass co452lab = new LabClass(3);
+co452lab.setInstructor("Nicholas Day");
+co452lab.setRoom("G100");
+co452lab.setTime("29th September 2020");
+Student student1 = new Student("Andy John", "66656");
+Student student2 = new Student("janna Laan", "54545");
+Student student3 = new Student("Hanna yal", "665656");
+Course course1 = new Course("Computing", "G400");
+co452lab.enrollStudent(student1);
+co452lab.enrollStudent(student2);
+co452lab.enrollStudent(student3);
+student1.changeName("Anna John");
+student1.addCredits(20);
+student2.addCredits(20);
+student3.addCredits(20);
+student2.print();
+janna Laan, student ID: 54545, credits: 20 null
+student1.print();
+Anna John, student ID: 66656, credits: 20 null
+student3.print();
+Hanna yal, student ID: 665656, credits: 20 null
+student1.enrolOnCourse(course1);
+student2.enrolOnCourse(course1);
+student3.enrolOnCourse(course1);
+student1.print();
+Anna John, student ID: 66656, credits: 20 title is: Computing and code is: G400
+student2.print();
+janna Laan, student ID: 54545, credits: 20 title is: Computing and code is: G400
+student3.print();
+Hanna yal, student ID: 665656, credits: 20 title is: Computing and code is: G400
+student1.print();
+Anna John, student ID: 66656, credits: 20 title is: Computing and code is: G400
+student2.print();
+janna Laan, student ID: 54545, credits: 20 title is: Computing and code is: G400
+student3.print();
+Hanna yal, student ID: 665656, credits: 20 title is: Computing and code is: G400
+co452lab.printList();
+Lab class 29th September 2020
+Instructor: Nicholas Day   Room: G100
+Class list:
+Anna John, student ID: 66656, credits: 20 title is: Computing and code is: G400
+janna Laan, student ID: 54545, credits: 20 title is: Computing and code is: G400
+Hanna yal, student ID: 665656, credits: 20 title is: Computing and code is: G400
+Number of students: 3
