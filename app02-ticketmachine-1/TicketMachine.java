@@ -19,15 +19,19 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
     private Coin value;
 
     private Ticket issuedTicket;
     
     private Ticket aylesburyTicket;
+    private Ticket aylesburyTicketPrice;
     
     private Ticket amershamTicket;
+    private Ticket amershamTicketPrice;
     
     private Ticket highWycombeTicket;
+    private Ticket highWycombeTicketPrice;
     
     /**
      * Create a machine that issues tickets of the given price.
@@ -37,17 +41,31 @@ public class TicketMachine
         price = cost;
         balance = 0;
         total = 0;
-        aylesburyTicket= new Ticket("Aylesbury", 220);
-        amershamTicket= new Ticket("Amersham" , 300);
-        highWycombeTicket=new Ticket("HighWycombw", 330);
+        this.aylesburyTicket= new Ticket("Aylesbury", 220);
+        this.amershamTicket= new Ticket("Amersham", 300);
+        this.highWycombeTicket=new Ticket("HighWycombw", 330);
+        this.aylesburyTicketPrice=new Ticket(220);
+    this.amershamTicketPrice= new Ticket( 300);
+        this.highWycombeTicketPrice=new Ticket(330);
         
         issuedTicket = null;
     }
    
-   /**
+    public int getAylsburyprice()
+    {
+        return price;
+    }
+        
+    public void setAylsburyPrice(int aylesburyTicketPrice)
+    {
+       price=aylesburyTicketPrice;
+    }
+        /**
      * @Return The price of a ticket.
      */
+    
     public int getPrice()
+    
     {
         return price;
     }
@@ -65,7 +83,7 @@ public class TicketMachine
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
-    
+
     public void insertMoney(int amount)
     {
         if(amount > 0) 
@@ -85,10 +103,10 @@ public class TicketMachine
        
     }
     
-  
     
-    {
-        aylesburyTicket.print();}
+    
+    
+  
         
     /**
      * Print a ticket if enough money has been inserted, and
