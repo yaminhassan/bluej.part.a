@@ -11,6 +11,7 @@
  * 
  * Modified by Yamin Hassan 
  */
+import java.util.Scanner;
 public class TicketMachine
 {
     // The price of a ticket from this machine.
@@ -19,6 +20,7 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    // the Coin class to add coins to the machine
     private Coin value;
 
     private Ticket issuedTicket;
@@ -28,6 +30,12 @@ public class TicketMachine
     private Ticket amershamTicket;
     
     private Ticket highWycombeTicket;
+   
+    public static final int AYLESBURY_TICKET_PRICE=220;
+    
+    public static final int AMERSHAM_TICKET_PRICE=300;
+    
+    public static final int HIGH_WYCOMBE_TICKET_PRICE=330;
     
     /**
      * Create a machine that issues tickets of the given price.
@@ -37,14 +45,17 @@ public class TicketMachine
         price = cost;
         balance = 0;
         total = 0;
+        // Aylesbury, Amersham and High wycombe ticket details need to print on ticket
         aylesburyTicket= new Ticket("Aylesbury", 220);
         amershamTicket= new Ticket("Amersham" , 300);
         highWycombeTicket=new Ticket("HighWycombw", 330);
         
+        // issued tiket field need invoke the function to set values for ticket and print field of ticket details
         issuedTicket = null;
     }
    
-   /**
+  
+    /**
      * @Return The price of a ticket.
      */
     public int getPrice()
@@ -60,7 +71,41 @@ public class TicketMachine
     {
         return balance;
     }
-
+    //Return Aylsbury ticket price
+    public int returnAylesburyTiketPrice()
+    {return AYLESBURY_TICKET_PRICE;
+    }
+      
+    // Select thw Aylesbury ticket to issue it
+    public void selectAylesburyTicket()
+    {
+        issuedTicket = aylesburyTicket;
+        price=AYLESBURY_TICKET_PRICE;
+    }
+    // Return amersham ticket price to return value
+    public int returnAmershamTicketPrice()
+    {
+    return AMERSHAM_TICKET_PRICE;
+    }
+    // Select the Amersham ticket to issue it 
+    public void selectAmershamTicket()
+    {
+    issuedTicket=amershamTicket;
+    price=AMERSHAM_TICKET_PRICE;
+    }
+    
+    // Return High Wycombe ticket price
+    public int returnHighWycombeTicketPrice()
+    {
+        return HIGH_WYCOMBE_TICKET_PRICE;
+    }
+    
+    // Select High Wycombe ticket
+    public void selectHighWycombeTicket()
+    {
+        issuedTicket=highWycombeTicket;
+        price=HIGH_WYCOMBE_TICKET_PRICE;
+    }
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
@@ -79,16 +124,11 @@ public class TicketMachine
         }
     }
 
-    public void selectAylesburyTicket()
-    {
-        issuedTicket = aylesburyTicket;
-       
-    }
     
   
     
-    {
-        aylesburyTicket.print();}
+    
+
         
     /**
      * Print a ticket if enough money has been inserted, and
@@ -101,10 +141,11 @@ public class TicketMachine
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
+            System.out.println(issuedTicket);
+            System.out.println("Ticket");
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
+            System.out.println("########");
             System.out.println();
 
             // Update the total collected with the price.
@@ -131,4 +172,5 @@ public class TicketMachine
         balance = 0;
         return amountToRefund;
     }
+    
 }

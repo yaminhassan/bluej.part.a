@@ -11,7 +11,7 @@ import java.util.Date;
 public class Ticket
 {
     // instance variables - replace the example below with your own
-    private int price;
+    public int price;
     private String destination;
     private Date issueDateTime;  
 
@@ -24,7 +24,27 @@ public class Ticket
         this.destination=destination;
         issueDateTime=new Date();
     }
-        
+    
+    public Ticket(int price)
+    {
+        this.price=price;
+    }
+    public int getPrice()
+    {return price;
+    }
+    public String returnDestination()
+    {return destination;
+    }
+    
+    public int returnPrice()
+    {
+        return price;
+    }
+   
+    public String toString()
+{
+    return destination+" "+price+" "+issueDateTime;
+}
     public void print()
     {
         System.out.print("Ticket " +destination+" "+"Price"+" "+

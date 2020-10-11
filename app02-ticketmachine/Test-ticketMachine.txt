@@ -1,0 +1,57 @@
+Ticket ticket1 = new Ticket("Amersham", 00);
+TicketMachine ticketMa2 = new TicketMachine(00);
+ticketMa2.getPrice()
+    returned int 0
+ticketMa2.selectHighWycombeTicket();
+ticketMa2.insertMoney(400);
+ticketMa2.printTicket();
+##################
+HighWycombw 0 Sun Oct 11 23:09:11 BST 2020
+Ticket
+# 330 cents.
+##################
+########
+
+ticketMa2.getBalance()
+    returned int 70
+ticketMa2.refundBalance()
+    returned int 70
+ticketMa2.getBalance()
+    returned int 0
+ticketMa2.selectAylesburyTicket();
+ticketMa2.getPrice()
+    returned int 220
+ticketMa2.insertMoney(200);
+ticketMa2.getBalance()
+    returned int 200
+ticketMa2.printTicket();
+You must insert at least: 20 more cents.
+ticketMa2.insertMoney(20);
+ticketMa2.getBalance()
+    returned int 220
+ticketMa2.printTicket();
+##################
+Aylesbury 0 Sun Oct 11 23:09:11 BST 2020
+Ticket
+# 220 cents.
+##################
+########
+
+ticketMa2.selectAmershamTicket();
+ticketMa2.getPrice()
+    returned int 300
+ticketMa2.getBalance()
+    returned int 0
+ticketMa2.insertMoney(300);
+ticketMa2.printTicket();
+##################
+Amersham 0 Sun Oct 11 23:09:11 BST 2020
+Ticket
+# 300 cents.
+##################
+########
+
+ticketMa2.getPrice()
+    returned int 300
+ticketMa2.getBalance()
+    returned int 0
