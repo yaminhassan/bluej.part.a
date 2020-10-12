@@ -21,16 +21,14 @@ public class TicketMachine
     // The total amount of money collected by this machine.
     private int total;
     // the Coin class to add coins to the machine
-    private Coin value;
-
+    public Coin value;
+    // issued ticket instance generated to invoke the method to issue the ticket 
     private Ticket issuedTicket;
-    
+    // the call aylesburyTicket, amershamTicket and highwycombe state in ticket class
     private Ticket aylesburyTicket;
-    
     private Ticket amershamTicket;
-    
     private Ticket highWycombeTicket;
-   
+    // the AYLESBURY_TICKET_PRICE,  AMERSHAM_TICKET_PRICE and HIGH_WYCOMBE_TICKET field are declared to give static value.
     public static final int AYLESBURY_TICKET_PRICE=220;
     
     public static final int AMERSHAM_TICKET_PRICE=300;
@@ -40,17 +38,19 @@ public class TicketMachine
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        // balance is declared in main method to express the value of the object state
         balance = 0;
+        // the total object is declared value 0 to state its state
         total = 0;
-        // Aylesbury, Amersham and High wycombe ticket details need to print on ticket
+        // Aylesbury, Amersham and High wycombe ticket details need to print on ticket through mathod declared in Ticket class
         aylesburyTicket= new Ticket("Aylesbury", 220);
         amershamTicket= new Ticket("Amersham" , 300);
         highWycombeTicket=new Ticket("HighWycombw", 330);
         
-        // issued tiket field need invoke the function to set values for ticket and print field of ticket details
+        
+        // issued tiket field needed to invoke the function to set values for ticket and print field of ticket details
         issuedTicket = null;
     }
    
@@ -93,7 +93,6 @@ public class TicketMachine
     issuedTicket=amershamTicket;
     price=AMERSHAM_TICKET_PRICE;
     }
-    
     // Return High Wycombe ticket price
     public int returnHighWycombeTicketPrice()
     {
@@ -106,30 +105,21 @@ public class TicketMachine
         issuedTicket=highWycombeTicket;
         price=HIGH_WYCOMBE_TICKET_PRICE;
     }
+    
     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
+   
     
-    public void insertMoney(int amount)
+    public void insertMoney (Coin value)
     {
-        if(amount > 0) 
-        {
-            balance = balance + amount;
-        }
-        else 
-        {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
-        }
+            
+            
+            balance = balance + value.getValue();
     }
-
-    
-  
-    
-    
-
-        
+       
+      
     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
@@ -141,10 +131,10 @@ public class TicketMachine
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
-            System.out.println(issuedTicket);
+            System.out.println("One Way "+issuedTicket);
             System.out.println("Ticket");
-            System.out.println("# " + price + " cents.");
-            System.out.println("##################");
+            System.out.println("Ticket Price " + price + " Pence.");
+            System.out.println("Thanks for doing business with us");
             System.out.println("########");
             System.out.println();
 

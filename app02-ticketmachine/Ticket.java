@@ -20,31 +20,24 @@ public class Ticket
      */
     public Ticket(String destination, int price)
     {
-       
+        this.price=price;
         this.destination=destination;
         issueDateTime=new Date();
     }
-    
-    public Ticket(int price)
-    {
-        this.price=price;
-    }
-    public int getPrice()
-    {return price;
-    }
+    // the return method is invoked to check state of destinatio field.
     public String returnDestination()
     {return destination;
     }
-    
+    // The return method is invoked to check the state of price field.
     public int returnPrice()
     {
         return price;
     }
-   
     public String toString()
 {
     return destination+" "+price+" "+issueDateTime;
 }
+    // print method is executed to print the method of the Class.
     public void print()
     {
         System.out.print("Ticket " +destination+" "+"Price"+" "+

@@ -1,0 +1,49 @@
+ticketMa1.selectHighWycombeTicket();
+ticketMa1.insertMoney(Coin.P200);
+ticketMa1.insertMoney(Coin.P200);
+ticketMa1.getBalance()
+    returned int 470
+ticketMa1.getPrice()
+    returned int 330
+ticketMa1.printTicket();
+##################
+One Way HighWycombw 330 Mon Oct 12 23:35:03 BST 2020
+Ticket
+Ticket Price 330 Pence.
+Thanks for doing business with us
+########
+
+ticketMa1.selectAylesburyTicket();
+ticketMa1.getPrice()
+    returned int 220
+ticketMa1.insertMoney(Coin.P200);
+ticketMa1.printTicket();
+##################
+One Way Aylesbury 220 Mon Oct 12 23:35:03 BST 2020
+Ticket
+Ticket Price 220 Pence.
+Thanks for doing business with us
+########
+
+ticketMa1.getBalance()
+    returned int 120
+ticketMa1.refundBalance()
+    returned int 120
+ticketMa1.getBalance()
+    returned int 0
+ticketMa1.returnHighWycombeTicketPrice()
+    returned int 330
+ticketMa1.getPrice()
+    returned int 220
+ticketMa1.insertMoney(Coin.P200);
+ticketMa1.printTicket();
+You must insert at least: 20 more cents.
+ticketMa1.insertMoney(Coin.P200);
+ticketMa1.printTicket();
+##################
+One Way Aylesbury 220 Mon Oct 12 23:35:03 BST 2020
+Ticket
+Ticket Price 220 Pence.
+Thanks for doing business with us
+########
+
