@@ -1,14 +1,36 @@
-
+import java.util.ArrayList;
 /** this class Course is created to add modules to it that the student can add course with modules
  * @ Author Yamin Hassan
- * @ Version  date creadted 12.10.2020
+ * @date creadted 12.10.2020
  * 
  */
 
  public class Course
  {
     
-    String courseName;
+    private String courseName;
+    private String courseCode;
+    
+    private  ArrayList<Module> modules;
+    
+    public Course(String courseName, String courseCode)
+    {
+        this.courseName=courseName;
+        this.courseCode=courseCode;
+        
+        modules= new ArrayList<Module>();
+        
+    }
+    
+    public void addModule(Module newModule)
+    {
+        modules.add(newModule);
+    }
+        
+    
+    
+    
+    
     
     
     
