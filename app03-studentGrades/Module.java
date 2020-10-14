@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * This class have information about Modules and thethe credits module hold.
  *
@@ -11,10 +11,12 @@ public class Module
     
     public int moduleCode;
     
-    private int percentageMark;
+    private ArrayList<Module> grades;
+    private String grade;
     
-    private char grade;
-    
+    private static final int CREDITS=15;
+    private int marks;
+    private int creditScore;
     
     
     
@@ -22,13 +24,67 @@ public class Module
     {
         this.moduleName=moduleName;
         this.moduleCode=moduleCode;
-        percentageMark=0;
+        grades=new ArrayList<Module>();
+        
+        creditScore=0;
+        
+        marks=0;
+       
         
         
       
     }
     
+    public int returnCredits()
+{return CREDITS;
+}
+    public void addMarks(int addMarks)
+    {
+        if(marks>100)
+        {System.out.println("only 100 marks can be obtain by the student");
+            
+    }
+    else
+    {
+        marks=addMarks;
+        
+    }
+}
+
+    public void addCredits()
+    {
+        if(marks>39 && marks<48) 
+        {grade="A";
+          creditScore=CREDITS;
+          System.out.println("Student Credit score is "+creditScore+" "+"and the student have attain Grade "+grade);
+            
+         
+        }
+        else if (marks>49 && marks<58)
+        {grade="B";}
+        else if(marks>59)
+        {grade="C";}
+        else 
+        {grade="D";}
+        
+    }
     
+    
+
+    
+    
+    
+    
+    
+    public String returnModuleName()
+    {
+        return moduleName;
+    }
+    
+    public int returnModuleCode()
+{
+    return moduleCode;
+}
     
     
 }

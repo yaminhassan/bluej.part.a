@@ -47,7 +47,7 @@ public class TicketMachine
         // Aylesbury, Amersham and High wycombe ticket details need to print on ticket through mathod declared in Ticket class
         aylesburyTicket= new Ticket("Aylesbury", 220);
         amershamTicket= new Ticket("Amersham" , 300);
-        highWycombeTicket=new Ticket("HighWycombw", 330);
+        highWycombeTicket=new Ticket("HighWycombe", 330);
         
         
         // issued tiket field needed to invoke the function to set values for ticket and print field of ticket details

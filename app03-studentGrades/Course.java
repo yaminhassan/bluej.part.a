@@ -11,7 +11,8 @@ import java.util.ArrayList;
     private String courseName;
     private String courseCode;
     
-    private  ArrayList<Module> modules;
+    public  ArrayList<Module> modules;
+   
     
     public Course(String courseName, String courseCode)
     {
@@ -20,36 +21,49 @@ import java.util.ArrayList;
         
         modules= new ArrayList<Module>();
         
+        
+        
+        
+        
     }
     
     public void addModule(Module newModule)
     {
         modules.add(newModule);
     }
-        
+ 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public String getCourseName()
+    {
+        return courseName;
     }
+    
+    public String gerCourseCode()
+    {
+        return courseCode;
+    }
+    
+    
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
