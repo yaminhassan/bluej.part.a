@@ -1,4 +1,7 @@
+
 import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  * This class have information about Modules and thethe credits module hold.
  *
@@ -9,70 +12,59 @@ public class Module
 {
     public String moduleName;
     
-    public int moduleCode;
-    
-    private ArrayList<Module> grades;
-    private String grade;
-    
-    private static final int CREDITS=15;
-    private int marks;
-    private int creditScore;
+    public String moduleCode;
     
     
     
-    public Module( String moduleName,  int modueCode)
+    
+    
+    public int percentageMarks;
+    
+    
+    
+    
+    
+    public Module( String moduleName,  String moduleCode, int percentageMarks)
     {
         this.moduleName=moduleName;
         this.moduleCode=moduleCode;
-        grades=new ArrayList<Module>();
         
-        creditScore=0;
+        this.percentageMarks=percentageMarks;
         
-        marks=0;
+        
        
         
         
       
     }
     
-    public int returnCredits()
-{return CREDITS;
-}
+        
+
+        
+   public int returnMarks()
+   {return percentageMarks;
+    }
+    
+
     public void addMarks(int addMarks)
     {
-        if(marks>100)
+        if(percentageMarks>100)
         {System.out.println("only 100 marks can be obtain by the student");
             
     }
     else
     {
-        marks=addMarks;
+        percentageMarks=addMarks;
         
     }
 }
 
-    public void addCredits()
+    
+    
+    public String toString1()
     {
-        if(marks>39 && marks<48) 
-        {grade="A";
-          creditScore=CREDITS;
-          System.out.println("Student Credit score is "+creditScore+" "+"and the student have attain Grade "+grade);
-            
-         
-        }
-        else if (marks>49 && marks<58)
-        {grade="B";}
-        else if(marks>59)
-        {grade="C";}
-        else 
-        {grade="D";}
-        
+        return moduleName+"  "+moduleCode;
     }
-    
-    
-
-    
-    
     
     
     
@@ -81,10 +73,11 @@ public class Module
         return moduleName;
     }
     
-    public int returnModuleCode()
+    public String returnModuleCode()
 {
     return moduleCode;
 }
     
-    
+
+   
 }

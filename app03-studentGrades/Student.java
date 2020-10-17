@@ -19,9 +19,10 @@ public class Student
     // the amount of credits for study taken so far
     private int credits;
     
-    private Module addcredits;
-    
     private ArrayList<Course> courses;
+    
+    
+   
     
     
     /**
@@ -39,9 +40,9 @@ public class Student
         
     }
     
-    public void returnStudentCredits()
-    {credits=addcredits.returnCredits();
-    }
+  
+    
+    
     public void addCourse(Course newCourse)
     {
         courses.add(newCourse);
@@ -55,13 +56,7 @@ public class Student
         return name;
     }
 
-    /**
-     * Set a new name for this student.
-     */
-    public void changeName(String replacementName)
-    {
-        name = replacementName;
-    }
+   
 
     /**
      * Return the student ID of this student.
@@ -88,15 +83,7 @@ public class Student
         return credits;
     }
 
-    /**
-     * Return the login name of this student. The login name is a combination
-     * of the first four characters of the student's name and the first three
-     * characters of the student's ID number.
-     */
-    public String getLoginName()
-    {
-        return name.substring(0,4) + id.substring(0,3);
-    }
+   
     
     /**
      * Print the student's name and ID number to the output terminal.

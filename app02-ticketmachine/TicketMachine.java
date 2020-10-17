@@ -149,6 +149,8 @@ public class TicketMachine
                                (price - balance) + " more cents.");
                     
         }
+        
+        
     }
 
     /**
