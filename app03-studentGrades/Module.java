@@ -14,6 +14,7 @@ public class Module
     
     public String code;
    
+    public int credit;
     // as a percentage
     public int mark;
     
@@ -23,6 +24,7 @@ public class Module
         this.code = code;
         
         this.mark = 0;
+        this.credit = 0;
     }
    
     /**
