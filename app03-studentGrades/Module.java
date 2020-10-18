@@ -10,70 +10,53 @@ import java.util.Scanner;
  */
 public class Module
 {
-    public String moduleName;
+    public String name;
     
-    public String moduleCode;
+    public String code;
    
-    public int percentageMarks;
+    // as a percentage
+    public int mark;
     
-    
-    
-    
-    
-    public Module( String moduleName,  String moduleCode, int percentageMarks)
+    public Module( String name,  String code)
     {
-        this.moduleName=moduleName;
-        this.moduleCode=moduleCode;
+        this.name = name;
+        this.code = code;
         
-        this.percentageMarks=percentageMarks;
-        
-        
-       
-        
-        
-      
+        this.mark = 0;
     }
-    
-        
-
-        
-   public int returnMarks()
-   {return percentageMarks;
-    }
-    
-
-    public void addMarks(int addMarks)
+   
+    /**
+     * 
+     */ 
+    public int getMark()
     {
-        if(percentageMarks>100)
-        {System.out.println("only 100 marks can be obtain by the student");
-            
+        return mark;
     }
-    else
-    {
-        percentageMarks=addMarks;
-        
-    }
-}
 
-    
+   public void setMark(int mark)
+   {
+        if(mark > 100)
+        {
+            System.out.println("only 100 marks can be obtain by the student");
+        }
+        else
+        {
+            this.mark = mark;
+        }
+    }
     
     public String toString()
     {
-        return moduleName+"  "+moduleCode;
+        return "Module: " + name + "  " + code;
     }
     
-    
-    
-    public String returnModuleName()
+    public String getName()
     {
-        return moduleName;
+        return name;
     }
     
-    public String returnModuleCode()
-{
-    return moduleCode;
-}
-    
-
-   
+    public String getCode()
+    {
+        return code;
+    }
 }
