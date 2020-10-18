@@ -13,11 +13,7 @@ public class Module
     public String moduleName;
     
     public String moduleCode;
-    
-    
-    
-    
-    
+   
     public int percentageMarks;
     
     
@@ -61,7 +57,7 @@ public class Module
 
     
     
-    public String toString1()
+    public String toString()
     {
         return moduleName+"  "+moduleCode;
     }
