@@ -21,10 +21,6 @@ public class Student
     
     private ArrayList<Course> courses;
     
-    
-   
-    
-    
     /**
      * Create a new student with a given name and ID number.
      */
@@ -35,13 +31,7 @@ public class Student
         credits = 0;
        
         courses= new ArrayList<Course>();
-        
-        
-        
     }
-    
-  
-    
     
     public void addCourse(Course newCourse)
     {
@@ -55,8 +45,6 @@ public class Student
     {
         return name;
     }
-
-   
 
     /**
      * Return the student ID of this student.
@@ -73,7 +61,6 @@ public class Student
     {
         credits += additionalPoints;
     }
-
     
     /**
      * Return the number of credit points this student has accumulated.
@@ -82,16 +69,12 @@ public class Student
     {
         return credits;
     }
-
-   
     
     /**
      * Print the student's name and ID number to the output terminal.
      */
     public void print()
-    
     {
-       
         System.out.println();
     }
 }
