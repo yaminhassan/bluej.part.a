@@ -49,7 +49,8 @@ public class Module
     
     public String toString()
     {
-        return "Module: " + name + "  " + code;
+        return "Module: " + name + "  " + code + 
+            "Mark = " + mark;
     }
     
     public String getName()
