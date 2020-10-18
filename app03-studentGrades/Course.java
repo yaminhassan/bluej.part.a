@@ -8,51 +8,34 @@ import java.util.ArrayList;
 
  public class Course
  {
+    private static final int CREDIT = 15;
     
-    private String courseName;
-    private String courseCode;
+    private String name;
+
+    private String code;
     
-    public  ArrayList<Module> modules;
-    public Module marks;
-   
-    public int credits;
-    public int attainCredits;
-    private static final int CREDITS=15;
+    public ArrayList<Module> modules;
     
     private String grade;
-   
     
-    public Course(String  courseName, String  courseCode, Module marks)
+    private int finalMark;
+    
+    private int credit;
+    
+    public Course(String  name, String  code)
     {
-        this.courseName=courseName;
-        this.courseCode=courseCode;
-        this.marks=marks;
+        this.name = name;
+        this.code = code;
         
         modules= new ArrayList<Module>();
-        credits=0;
-        attainCredits=0;
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        finalMark = 0;
     }
     
-    public void addsomr()
-    {System.out.println(marks.returnMarks());
-        
+    public String getGrade()
+    {
+        return grade;
     }
     
-        public int returnTotalCredits()
-        {
-            return credits;}
-            
-            
     public void addModule(Module newModule)
     {
         modules.add(newModule);
@@ -61,55 +44,57 @@ import java.util.ArrayList;
     
     public String getCourseName()
     {
-        return courseName;
+        return name;
     }
     
-    public String gerCourseCode()
+    public String getCourseCode()
     {
-        return courseCode;
+        return code;
     }
     
     public void printCourse()
     {
-        System.out.println("the course name "+courseName+" "+"The Course Code "+courseCode+"  "+modules);
+        System.out.println("The course name " + name + 
+            " The Course Code " + code);
        
-        }
+    }
         
-     public void addCredits()
+    public void calculateFinalMark()
     {
-        if(marks.returnMarks()>40 && marks.returnMarks()<49) 
-        {grade="D";
-          attainCredits=CREDITS;
-          
-          System.out.println("Student Credit score is "+attainCredits+" "+"and the student have attain Grade "+grade);
-            
-         
+        int total = 0;
+        int mark = 0;
+        
+        //todo
+        for(Module module : modules)
+        {
+            mark = module.getMark();
+            System.out.println(module);
         }
-       
-        else if(marks.returnMarks()>50 && marks.returnMarks()<59)
-        {grade="C";
-        attainCredits=CREDITS;
-        }
-         else if(marks.returnMarks()>60 && marks.returnMarks()<69)
-        {grade="B";
-        attainCredits=CREDITS;}
-         else if(marks.returnMarks()>70 && marks.returnMarks()<100)
-        {grade="A";
-        attainCredits=CREDITS;}
-        else 
-        {grade="F";
-        attainCredits=0;}
-        
-        
-        
-        
-        
-        
-    }   
-          
-
+    }
     
-
+    public void convertToGrade()
+    {
+        if(finalMark >= 40 && finalMark < 50) 
+        {
+            grade = "D";
+        }
+        else if(finalMark >= 50 && finalMark < 60) 
+        {
+            grade = "C";
+        }
+        else if(finalMark >= 60 && finalMark < 70) 
+        {
+            grade = "B";
+        }
+        else if(finalMark >= 70 && finalMark < 100) 
+        {
+            grade = "A";
+        }
+        else
+        {
+            grade = "F";
+        }
+    }   
 }
 
     
