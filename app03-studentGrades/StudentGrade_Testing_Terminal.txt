@@ -1,0 +1,53 @@
+Student asimBajwa = new Student("Asim Bajwa", "ST: 78 45 21");
+Course dataScience = new Course("Data Science", "CO: 75 26 84");
+asimBajwa.addCourse(dataScience);
+Module computerArchitechture = new Module("Computer Architechture", "MO: 84 36 97");
+Module dataDesign = new Module("Data Design", "MO: 78 69 42");
+Module programmingConcept = new Module("Programming Concept", "MO:  15 48 15");
+Module webDevelopment = new Module("Web Development", "MO: 87 26 41");
+dataScience.addModule(computerArchitechture);
+dataScience.addModule(dataDesign);
+dataScience.addModule(programmingConcept);
+dataScience.addModule(webDevelopment);
+dataScience.printCourse();
+The Course name: Data Science,  The Course Code: CO: 75 26 84
+dataScience.printModule();
+Module: Computer Architechture , Code MO: 84 36 97 , Mark = 0%
+Module: Data Design , Code MO: 78 69 42 , Mark = 0%
+Module: Programming Concept , Code MO:  15 48 15 , Mark = 0%
+Module: Web Development , Code MO: 87 26 41 , Mark = 0%
+asimBajwa.printStudentDetails();
+ Student name: Asim Bajwa , Student Id: ST: 78 45 21
+computerArchitechture.printModule();
+ The Module name: Computer Architechture,  Module code: MO: 84 36 97
+dataDesign.printModule();
+ The Module name: Data Design,  Module code: MO: 78 69 42
+programmingConcept.printModule();
+ The Module name: Programming Concept,  Module code: MO:  15 48 15
+webDevelopment.printModule();
+ The Module name: Web Development,  Module code: MO: 87 26 41
+webDevelopment.setMark(54);
+programmingConcept.setMark(50);
+dataDesign.setMark(54);
+computerArchitechture.setMark(50);
+dataScience.calculateFinalMark();
+dataScience.convertToGrade();
+ the Student has attain final mark: 52% and Grade: C
+asimBajwa.printFinalGrade();
+the Student's final grade is: C , the final mark of the Student is: 52%
+dataScience.printModule();
+Module: Computer Architechture , Code MO: 84 36 97 , Mark = 50%
+Module: Data Design , Code MO: 78 69 42 , Mark = 54%
+Module: Programming Concept , Code MO:  15 48 15 , Mark = 50%
+Module: Web Development , Code MO: 87 26 41 , Mark = 54%
+webDevelopment.setMark(30);
+dataScience.printModule();
+Module: Computer Architechture , Code MO: 84 36 97 , Mark = 50%
+Module: Data Design , Code MO: 78 69 42 , Mark = 54%
+Module: Programming Concept , Code MO:  15 48 15 , Mark = 50%
+Module: Web Development , Code MO: 87 26 41 , Mark = 30%
+dataScience.calculateFinalMark();
+dataScience.convertToGrade();
+ the student has not completed all four modules,so the course is not able to provide final grades 
+dataScience.returnCredits()
+    returned int 45
