@@ -1,3 +1,6 @@
+import java.util.*;
+
+
 /**
  * Demonstrate the StockManager and Product classes.
  * The demonstration becomes properly functional as
@@ -9,7 +12,8 @@
 public class StockDemo
 {
     // The stock manager.
-    private StockManager manager;
+    private StockManager  manager;
+    
 
     /**
      * Create a StockManager and populate it with a few
@@ -21,6 +25,14 @@ public class StockDemo
         manager.addProduct(new Product(132, "Clock Radio"));
         manager.addProduct(new Product(37,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
+        manager.addProduct(new Product(37,  "Sony Tv"));
+        manager.addProduct(new Product(42, "Toshiba TV"));
+        manager.addProduct(new Product(45, " Samsung TV"));
+        manager.addProduct(new Product(55, "LG TV"));
+        manager.addProduct(new Product(88, "Apple TV"));
+        manager.addProduct(new Product(99, "Toshiba Walkman"));
+        manager.addProduct(new Product(78, " Samsung Sond System"));
+        
     }
     
     /**
@@ -34,6 +46,15 @@ public class StockDemo
         manager.printProductDetails();
         // Take delivery of 5 items of one of the products.
         manager.delivery(132, 5);
+        manager.delivery(37, 5);
+        manager.delivery(23, 5);
+        manager.delivery(42, 5);
+        manager.delivery(45, 5);
+        //take delivery of 10 items of one of the products.
+        manager.delivery(55, 10);
+        manager.delivery(88, 10);
+        manager.delivery(99, 10);
+        manager.delivery(78, 10);
         manager.printProductDetails();
     }
     
@@ -44,11 +65,14 @@ public class StockDemo
      */
     public void showDetails(int id)
     {
-        Product product = getProduct(id);
+        Product product = manager.findProduct(id);
         
         if(product != null) 
         {
+           
+        {
             System.out.println(product.toString());
+        }
         }
     }
     
@@ -77,9 +101,9 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-        Product product = manager.findProduct(id);
+       Product product = manager.findProduct(id);
         
-        if(product == null) 
+       if(product == null) 
         {
             System.out.println("Product with ID: " + id +
                                " is not recognised.");
@@ -94,4 +118,5 @@ public class StockDemo
     {
         return manager;
     }
+   
 }

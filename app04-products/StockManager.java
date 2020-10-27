@@ -11,6 +11,7 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
+    
 
     /**
      * Initialise the stock manager.
@@ -19,7 +20,7 @@ public class StockManager
     {
         stock = new ArrayList<>();
     }
-
+    
     /**
      * Add a product to the list.
      * @param item The item to be added.
@@ -27,6 +28,7 @@ public class StockManager
     public void addProduct(Product item)
     {
         stock.add(item);
+        
     }
     
     /**
@@ -37,8 +39,22 @@ public class StockManager
      */
     public void delivery(int id, int amount)
     {
+        
+        Product product = findProduct(id);
+        {
+            if(product != null)
+            {
+                product.increaseQuantity(amount);
+                product.getQuantity();
+            }
+            else
+            {
+                System.out.println(" Please add stock in positive numbers");
+            }
+        }
     }
     
+     
     /**
      * Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
@@ -46,6 +62,14 @@ public class StockManager
      */
     public Product findProduct(int id)
     {
+        for(Product product : stock)
+        {
+            if(product.getID() == id)
+            {
+                return product;
+            
+            }
+        }
         return null;
     }
     
@@ -56,9 +80,21 @@ public class StockManager
      * @param id The ID of the product.
      * @return The quantity of the given product in stock.
      */
-    public int numberInStock(int id)
+    public void numberInStock(int id)
     {
-        return 0;
+        Product product = findProduct(id);
+        if(product != null)
+        {
+             product.getQuantity();
+             System.out.println(" The stock quantity is :" + product.getQuantity());         
+        }
+        else
+        {
+            System.out.println(" The system does not find the product");
+        }
+        
+                      
+        
     }
 
     /**
@@ -66,5 +102,7 @@ public class StockManager
      */
     public void printProductDetails()
     {
+        for(Product stocks : stock)
+        System.out.println(stocks);
     }
 }
