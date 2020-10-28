@@ -65,9 +65,24 @@ public class StockManager
             System.out.println(product.toString());
         }
     }
-         
-    /**
-     * Try to find a product in the stock with the given id.
+    
+     /**
+      * Print product by search with name String    
+     */
+    public void printByName(String name)
+    {
+        Product product =findByName(name);
+        if(product != null)
+        {
+            System.out.println(product.toString());
+        }
+        else
+        {
+            System.out.println(" Product not found");
+        }
+    }
+    
+     /** Try to find a product in the stock with the given id.
      * @return The identified product, or null if there is none
      *         with a matching ID.
      */
@@ -77,7 +92,7 @@ public class StockManager
         {
             if(product.getID() == id)
             {
-                return product;            
+                return product;  
             }
         }
         return null;
@@ -97,7 +112,24 @@ public class StockManager
             System.out.println( " The product not found on the database");
         }
     }
-        
+    
+     /** This method find product from stock and sale it to customer
+      * 
+      */
+     public void sellProduct(int id, int sale)
+    {
+        Product product = findProduct(id);
+        if(product!= null)
+        {
+            product.sellProduct(sale);
+            System.out.println(product);
+        }
+         else
+        {
+            System.out.println( " product not found");
+        }
+    }
+     
     /**
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
@@ -128,6 +160,20 @@ public class StockManager
         System.out.println(stocks);
     }
     
+    /** This method check the level of of the stock if it
+     * is low it print it on the terminal
+     */
+    public void printLowStock()
+    {
+        for(Product stocks : stock)
+        {
+            if (stocks.getQuantity() < 3)
+            {
+                System.out.println(stocks);
+            }
+        }
+    }
+           
     /** If product is not anymore part of the stock the method is to remove it from Array list. 
      */
     public void removeProduct(int id)
@@ -145,15 +191,15 @@ public class StockManager
     } 
     
     /** Find the product with its name
-    * and print it on the terminal.
+    * and @return the idenfied product.
     */
-    public Product findProductName(String productName)
+    public Product findByName(String productName)
     {
         for( Product product : stock)
         {
             if(product.getName() == productName)
             {
-                return product;
+                return product;               
             }
             else
             {

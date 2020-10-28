@@ -12,7 +12,7 @@ public class Product
     private String name;
     // The quantity of this product in stock.
     private int quantity;
-
+    
     /**
      * Constructor for objects of class Product.
      * The initial stock quantity is zero.
@@ -90,11 +90,11 @@ public class Product
      * Sell one of these products.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sellProduct(int sale)
     {
         if(quantity > 0) 
         {
-            quantity--;
+            quantity -= sale;
         }
         else 
         {
