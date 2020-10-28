@@ -3,25 +3,24 @@ import java.util.*;
 
 /**
  * Demonstrate the StockManager and Product classes.
- * The demonstration becomes properly functional as
- * the StockManager class is completed.
- * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * The class can store the products of the array list and can delive
+ * @author Yamin Hassan
+ * @revised 26.10.2020
  */
 public class StockDemo
 {
     // The stock manager.
     private StockManager  manager;
     
+    
 
     /**
-     * Create a StockManager and populate it with a few
-     * sample products.
+     * Create a StockManager and populate it with ten sample
+     * products
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
+        this.manager=manager;
         manager.addProduct(new Product(132, "Clock Radio"));
         manager.addProduct(new Product(37,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
@@ -34,30 +33,19 @@ public class StockDemo
         manager.addProduct(new Product(78, " Samsung Sond System"));
         
     }
-    
-    /**
-     * Provide a very simple demonstration of how a StockManager
-     * might be used. Details of one product are shown, the
-     * product is restocked, and then the details are shown again.
+    /** 
+     * the method can determine the quantity of
+     * the precise product in stock.
      */
-    public void demo()
+    public void productQuantity(int id)
     {
-        // Show details of all of the products.
-        manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        manager.delivery(37, 5);
-        manager.delivery(23, 5);
-        manager.delivery(42, 5);
-        manager.delivery(45, 5);
-        //take delivery of 10 items of one of the products.
-        manager.delivery(55, 10);
-        manager.delivery(88, 10);
-        manager.delivery(99, 10);
-        manager.delivery(78, 10);
-        manager.printProductDetails();
+        Product product = manager.findProduct(id);
+        if(product!=null)
+        {
+            System.out.println(product.getQuantity());
+        }
     }
-    
+        
     /**
      * Show details of the given product. If found,
      * its name and stock quantity will be shown.
@@ -69,13 +57,57 @@ public class StockDemo
         
         if(product != null) 
         {
-           
-        {
-            System.out.println(product.toString());
-        }
+            {
+                System.out.println(product.toString());
+            }
         }
     }
     
+    /**
+     * The stokeDemo's demoDelivery method demonstrate that
+     * it can find the product and increase with its quantity 
+     * with the delivery and restock it.
+     */
+    public void demoDelivery()
+    {
+        // Take delivery of 5 items of one of the products.
+        manager.delivery(132, 5);
+        // Show details of all of the products.
+        manager.printProduct(132);
+        // Take delivery of 5 items of one of the products.
+        manager.delivery(37, 5);
+        // Show details of all of the products.
+        manager.printProduct(37);
+        // Take delivery of 5 items of one of the products.
+        manager.delivery(23, 5);
+        // Show details of all of the products.
+        manager.printProduct(23);
+        // Take delivery of 5 items of one of the products.
+        manager.delivery(42, 5);
+        // Show details of all of the products.
+        manager.printProduct(42);
+        // Take delivery of 5 items of one of the products.
+        manager.delivery(45, 5);
+                // Show details of all of the products.
+        manager.printProduct(45);
+        //take delivery of 10 items of one of the products.
+        manager.delivery(55, 10);
+        // Show details of all of the products.
+        manager.printProduct(55);
+        //take delivery of 10 items of one of the products.
+        manager.delivery(88, 10);
+        // Show details of all of the products.
+        manager.printProduct(88);
+        //take delivery of 10 items of one of the products.
+        manager.delivery(99, 10);
+        // Show details of all of the products.
+        manager.printProduct(99);
+        //take delivery of 10 items of one of the products.
+        manager.delivery(78, 10);
+        // Show details of all of the products.
+        manager.printProduct(78);
+    }
+        
     /**
      * Sell one of the given item.
      * Show the before and after status of the product.
@@ -84,7 +116,6 @@ public class StockDemo
     public void sellProduct(int id)
     {
         Product product = getProduct(id);
-        
         if(product != null) 
         {
             showDetails(id);
@@ -101,9 +132,9 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-       Product product = manager.findProduct(id);
+        Product product = manager.findProduct(id);
         
-       if(product == null) 
+        if(product == null) 
         {
             System.out.println("Product with ID: " + id +
                                " is not recognised.");

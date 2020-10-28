@@ -1,8 +1,8 @@
 /**
- * Model some details of a product sold by a company.
- * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * The product class can creat instances of a prooduct.
+ *  The product contain name, id and the quantity.
+ *  @modifiedBy  Yamin Hassan
+ * @version 2020.10.26
  */
 public class Product
 {
@@ -23,7 +23,7 @@ public class Product
     {
         this.id = id;
         this.name = name;
-        
+        quantity=0;        
     }
 
     /**
@@ -41,9 +41,18 @@ public class Product
     {
         return name;
     }
+    
+    /**
+     * This method can change the name of te product with
+     * replaced name.
+     */
+    public void replaceName(String name)
+    {
+        this.name = name;
+    }
 
     /**
-     * @return The quantity in stock.
+     * return The quantity in stock.
      */
     public int getQuantity()
     {
@@ -55,7 +64,7 @@ public class Product
      */
     public String toString()
     {
-        return id + ": " +  name + " stock level: " + quantity;
+        return id + ": " +  name + " stock level: " + getQuantity();
     }
 
     /**
