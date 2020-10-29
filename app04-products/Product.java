@@ -92,14 +92,17 @@ public class Product
      */
     public void sellProduct(int sale)
     {
-        if(quantity > 0) 
+        if(quantity >= sale) 
         {
             quantity -= sale;
         }
+        else if(quantity<sale)
+        {
+            System.out.println(" Please do not order more than stock level thanks");
+        }
         else 
         {
-            System.out.println(
-                "Attempt to sell an out of stock item: " + name);
+            System.out.println(name + " is not in stock");
         }
     }
 }

@@ -12,8 +12,6 @@ public class StockDemo
     // The stock manager.
     private StockManager  manager;
     
-    
-
     /**
      * Create a StockManager and populate it with ten sample
      * products
@@ -31,44 +29,6 @@ public class StockDemo
         manager.addProduct(new Product(88, "Apple TV"));
         manager.addProduct(new Product(99, "Toshiba Walkman"));
         manager.addProduct(new Product(78, " Samsung Sond System"));
-        
-    }
-    /** 
-     * the method can determine the quantity of
-     * the precise product in stock.
-     */
-    public void productQuantity(int id)
-    {
-        Product product = manager.findProduct(id);
-        if(product!=null)
-        {
-            System.out.println(product.getQuantity());
-        }
-        else
-        {
-            System.out.println(" The product not found try valid Id");
-        }
-    }
-        
-    /**
-     * Show details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
-     */
-    public void showDetails(int id)
-    {
-        Product product = manager.findProduct(id);
-        
-        if(product != null) 
-        {
-            {
-                System.out.println(product.toString());
-            }
-        }
-        else
-        {
-            System.out.println("Product not found");
-        }
     }
     
     /**
@@ -115,7 +75,7 @@ public class StockDemo
         // Show details of all of the products.
         manager.printProduct(78);
     }
-        
+    
     /**
      * Sell one of the given item.
      * Show the before and after status of the product.
@@ -132,6 +92,44 @@ public class StockDemo
         }
     }
     
+    /** 
+     * the method can determine the quantity of
+     * the precise product in stock.
+     */
+    public void productQuantity(int id)
+    {
+        Product product = manager.findProduct(id);
+        if(product!=null)
+        {
+            System.out.println(product.getQuantity());
+        }
+        else
+        {
+            System.out.println(" The product not found try valid Id");
+        }
+    }
+        
+    /**
+     * Show details of the given product. If found,
+     * its name and stock quantity will be shown.
+     * @param id The ID of the product to look for.
+     */
+    public void showDetails(int id)
+    {
+        Product product = manager.findProduct(id);
+        
+        if(product != null) 
+        {
+            {
+                System.out.println(product.toString());
+            }
+        }
+        else
+        {
+            System.out.println("Product not found");
+        }
+    }
+     
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
