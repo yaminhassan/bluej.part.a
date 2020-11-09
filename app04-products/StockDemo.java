@@ -20,7 +20,7 @@ public class StockDemo
     {
         this.manager=manager;
         manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
+        manager.addProduct(new Product(89,  "Mobile Phone"));
         manager.addProduct(new Product(23,  "Microwave Oven"));
         manager.addProduct(new Product(37,  "Sony Tv"));
         manager.addProduct(new Product(42, "Toshiba TV"));
@@ -39,41 +39,16 @@ public class StockDemo
     public void demoDelivery()
     {
         // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        // Show details of all of the products.
-        manager.printProduct(132);
-        // Take delivery of 5 items of one of the products.
+        manager.delivery(132,5);
         manager.delivery(37, 5);
-        // Show details of all of the products.
-        manager.printProduct(37);
-        // Take delivery of 5 items of one of the products.
         manager.delivery(23, 5);
-        // Show details of all of the products.
-        manager.printProduct(23);
-        // Take delivery of 5 items of one of the products.
         manager.delivery(42, 5);
-        // Show details of all of the products.
-        manager.printProduct(42);
-        // Take delivery of 5 items of one of the products.
         manager.delivery(45, 5);
-                // Show details of all of the products.
-        manager.printProduct(45);
         //take delivery of 10 items of one of the products.
         manager.delivery(55, 10);
-        // Show details of all of the products.
-        manager.printProduct(55);
-        //take delivery of 10 items of one of the products.
         manager.delivery(88, 10);
-        // Show details of all of the products.
-        manager.printProduct(88);
-        //take delivery of 10 items of one of the products.
         manager.delivery(99, 10);
-        // Show details of all of the products.
-        manager.printProduct(99);
-        //take delivery of 10 items of one of the products.
         manager.delivery(78, 10);
-        // Show details of all of the products.
-        manager.printProduct(78);
     }
     
     /**
@@ -81,13 +56,14 @@ public class StockDemo
      * Show the before and after status of the product.
      * @param id The ID of the product being sold.
      */
-    public void sellProduct(int id, int sale)
+    public void sellProduct(int id, int sell)
     {
         Product product = getProduct(id);
         if(product != null) 
         {
             showDetails(id);
-            product.sellProduct(sale);
+            product.sellProduct(sell);
+            printTrader();
             showDetails(id);
         }
     }
@@ -116,8 +92,7 @@ public class StockDemo
      */
     public void showDetails(int id)
     {
-        Product product = manager.findProduct(id);
-        
+        Product product = manager.findProduct(id);        
         if(product != null) 
         {
             {
@@ -129,7 +104,15 @@ public class StockDemo
             System.out.println("Product not found");
         }
     }
-     
+    
+    public void printTrader()
+    {
+        System.out.println("********** Yamin Traders and Supplies*********"+
+                            "*********************************************"+
+                            "*********************************************"+
+                            "*********************************************");
+    }
+    
     /**
      * Get the product with the given id from the manager.
      * An error message is printed if there is no match.
@@ -138,8 +121,7 @@ public class StockDemo
      */
     public Product getProduct(int id)
     {
-        Product product = manager.findProduct(id);
-        
+        Product product = manager.findProduct(id);        
         if(product == null) 
         {
             System.out.println("Product with ID: " + id +

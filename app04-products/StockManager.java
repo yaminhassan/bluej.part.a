@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
+import java.util.*;
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
@@ -33,7 +34,7 @@ public class StockManager
      * @return The identified product, or null if there is none
      *         with a matching ID.
      */
-    public Product findProduct(int id)
+     public Product findProduct(int id)
     {
         for(Product product : stock)
         {
@@ -45,22 +46,39 @@ public class StockManager
         return null;
     }
     
+    /** Try to find the product with key word
+     */
     public Product findByKeyword(String productName)
-    {
-        for( Product product : stock)
+    {   
+        for (int i = 0; i < stock.size(); i++) 
         {
-            if(product.getName().contains(productName) )
+            for(Product product: stock)
             {
-                return product;               
-            }
-            else
-            {
-                System.out.println(" Product not found");
+                if (product.getName().contains(productName)) 
+                {
+                 return product;
+                }
             }
         }
         return null;
     }
     
+    /** Find the product with keyword and print 
+     * it on the terminal.
+     */
+    public void search(String word)
+    {
+        Product product= findByKeyword(word);
+        if(product!=null)
+        {
+            System.out.println(product);
+        }
+        else
+        {
+            System.out.println(" Product not found");
+        }
+    }
+   
     /** Find the product with its name
     * and @return the idenfied product.
     */
@@ -74,7 +92,7 @@ public class StockManager
             }
             else
             {
-                System.out.println(" Product not found");
+                System.out.println(" Product not found on the database");
             }
         }
         return null;
@@ -91,7 +109,7 @@ public class StockManager
         }
         else
         {
-            System.out.println( " The product not found on the database");
+            System.out.println( " Product not found on the database");
         }
     }
     
@@ -103,11 +121,11 @@ public class StockManager
         if(product != null)
         {
             stock.remove(product);
-            System.out.println("The product has been removed.");         
+            System.out.println("The product has been removed from Stock.");         
         }
         else
         {
-            System.out.println(" The system does not find the product");
+            System.out.println(" Product not found on the database");
         }
     } 
     
@@ -118,9 +136,9 @@ public class StockManager
     {
         for(Product stocks : stock)
         {
-            if (stocks.getQuantity() < 3)
+            if (stocks.getQuantity() <= 3)
             {
-                System.out.println(stocks);
+                System.out.println(stocks + " ** Product level is low please replenish the stock" );
             }
         }
     }
@@ -135,14 +153,14 @@ public class StockManager
     {
         Product product = findProduct(id);
         {
-            if(product != null)
+            if(product != null && amount > 0)
             {
                 product.increaseQuantity(amount);
-                product.getQuantity();
+                System.out.println(product);
             }
             else
             {
-                System.out.println(" Please add stock in positive numbers");
+                System.out.println(" Product not found");
             }
         }
     }
@@ -152,19 +170,23 @@ public class StockManager
      * its name and stock quantity will be shown.
      * @param id The ID of the product to look for.
      */
-    public void printProduct(int id)
+     public void printProduct(int id)
     {
         Product product = findProduct(id);        
         if(product != null) 
         {
-            System.out.println(product.toString());
+            System.out.println(product);
+        }
+        else
+        {
+            System.out.println("Product not found");
         }
     }
     
      /**
       * Print product by search with name String    
      */
-    public void printByName(String name)
+     public void printByName(String name)
     {
         Product product =findByName(name);
         if(product != null)
@@ -180,15 +202,17 @@ public class StockManager
      /** This method find product from stock and sale it to customer
       * 
       */
-     public void sellProduct(int id, int sale)
+    public void sellProduct(int id, int sale)
     {
         Product product = findProduct(id);
         if(product!= null)
         {
+            System.out.println( "Available stock Level:" + product.getQuantity());
             product.sellProduct(sale);
-            System.out.println(product);
+            System.out.println(" Number of product sold: " + sale);
+            System.out.println(product + ", after sale");
         }
-         else
+        else
         {
             System.out.println( " product not found");
         }
@@ -206,8 +230,7 @@ public class StockManager
         Product product = findProduct(id);
         if(product != null)
         {
-            product.getQuantity();
-            System.out.println(" The stock quantity is :" + product.getQuantity());         
+            System.out.println(product.toString());         
         }
         else
         {
