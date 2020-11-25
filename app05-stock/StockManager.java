@@ -27,7 +27,17 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);        
+        if(findProduct(item.getID()) != null)
+        {
+            System.out.println(" Duplicate id please type unique id to add new product");
+            
+        }
+        else
+        {
+            stock.add(item);  
+            System.out.println("The new product: " + item + "  has added to stock");
+            
+        }
     }
        
       /** Try to find a product in the stock with the given id.
@@ -42,6 +52,7 @@ public class StockManager
             {
                 return product;  
             }
+           
         }
         return null;
     }
@@ -106,6 +117,7 @@ public class StockManager
         if(product != null)
         {
             product.replaceName(replacement);
+            System.out.println(product);
         }
         else
         {
@@ -130,17 +142,58 @@ public class StockManager
     } 
     
     /** This method check the level of of the stock if it
+     * is low it increment stock with 10 products and print it on the terminal
+     */
+    public void reStockLowStock()
+    {
+        for(Product stocks : stock)
+        {
+            int amount = 10;
+            int amount_1 = 9;
+            int amount_2 = 8;
+            int amount_3 = 7;
+            if (stocks.getQuantity() == 3)
+            {
+                  stocks.increaseQuantity(amount_3);
+                  System.out.println(stocks);
+            }
+            else if(stocks.getQuantity() == 2)
+            {
+                stocks.increaseQuantity(amount_2);
+                  System.out.println(stocks);
+            }
+            else if(stocks.getQuantity() == 1)
+            {
+                stocks.increaseQuantity(amount_1);
+                  System.out.println(stocks);
+            }
+            else if(stocks.getQuantity() == 0)
+            {
+                stocks.increaseQuantity(amount);
+                  System.out.println(stocks);
+            }
+            else
+            {
+                System.out.println( " all products are up-to-date");
+            }
+        }
+    }
+    
+    /** This method check the level of of the stock if it
      * is low it print it on the terminal
      */
     public void printLowStock()
     {
-        for(Product stocks : stock)
+        for(Product product : stock)
+        if(product.getQuantity() <= 3)
         {
-            if (stocks.getQuantity() <= 3)
-            {
-                System.out.println(stocks + " ** Product level is low please replenish the stock" );
-            }
+            System.out.println(product);
         }
+        else if(product == null)
+        {
+            System.out.println( "All products are up-to-date");
+        }
+        
     }
     
     /**
@@ -165,7 +218,7 @@ public class StockManager
         }
     }
        
-     /**
+    /**
      * Print details of the given product. If found,
      * its name and stock quantity will be shown.
      * @param id The ID of the product to look for.
@@ -183,7 +236,7 @@ public class StockManager
         }
     }
     
-     /**
+    /**
       * Print product by search with name String    
      */
      public void printByName(String name)
@@ -199,7 +252,7 @@ public class StockManager
         }
     }
         
-     /** This method find product from stock and sale it to customer
+    /** This method find product from stock and sale it to customer
       * 
       */
     public void sellProduct(int id, int sale)
@@ -209,7 +262,6 @@ public class StockManager
         {
             System.out.println( "Available stock Level:" + product.getQuantity());
             product.sellProduct(sale);
-            System.out.println(" Number of product sold: " + sale);
             System.out.println(product + ", after sale");
         }
         else

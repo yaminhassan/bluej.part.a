@@ -82,8 +82,7 @@ public class Product
         }
         else 
         {
-            System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + getQuantity());
+            System.out.println(" ####### Please enetr positive value");
         }
     }
 
@@ -93,16 +92,20 @@ public class Product
      */
     public void sellProduct(int sale)
     {
-        if(quantity >= sale && quantity > 0) 
+        if(quantity >= sale && sale > 0) 
         {
             quantity -= sale;
         }
-        else if(quantity<sale && quantity < 0)
+        else if( sale < 0) 
         {
-            System.out.println(" Please do not order more than stock level thanks "
+            System.out.println(" #### Please enetr positive number");
+        }
+        else if(sale > quantity)
+        {
+            System.out.println(" #### Please do not order more than stock level thanks "
             + "the required amount: " + sale+ " is more than stock: " + getQuantity() );
         }
-        else 
+        else if(quantity == 0)
         {
             System.out.println(name + " is not in stock");
         }

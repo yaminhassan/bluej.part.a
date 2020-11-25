@@ -2,7 +2,7 @@
 /**
  * Write a description of class Program here.
  *
- * @author (your name)
+ * @author Yamin Hassan
  * @version (a version number or a date)
  */
 public class Program
@@ -16,6 +16,6 @@ public class Program
     public static void main()
     {
         app = new StockApp();
-        app.run();
+        app.getMenuChoice();
     }
 }
