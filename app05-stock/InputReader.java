@@ -12,15 +12,16 @@ import java.util.Scanner;
 public class InputReader
 {
     private Scanner reader;
-
+    private Scanner integerReader;
     /**
      * Create a new InputReader that reads text from the text terminal.
      */
     public InputReader()
     {
         reader = new Scanner(System.in);
-    }
-
+        integerReader = new Scanner(System.in);
+    }    
+    
     /**
      * Read a line of text from standard input (the text terminal),
      * and return it as a String.
@@ -30,10 +31,34 @@ public class InputReader
     public String getInput()
     {
         System.out.print("> ");         // print prompt
-        String inputLine = reader.nextLine().trim();
         
-       return inputLine;
+        String inputLine = reader.nextLine().trim().toLowerCase();
+        
+        return inputLine;
+        
+        
+    }  
+    public int getIntegerInput()
+    {
+        int number = 0;
+         boolean valid = false;
+          
+       while (!valid)
+        {
+       String string = getInput();
+        try
+        {
+            number = Integer.parseInt(string);
+            valid = true;
+        }
+        catch(Exception e)
+        {
+            System.out.println("not a number");
+            
+        }
+        }
+        return number;
+        
+        
     }
-     
-    
 }

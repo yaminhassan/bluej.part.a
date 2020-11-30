@@ -1,0 +1,356 @@
+
+****************************************** 
+        Stock Management Application       
+        App05: by Yamin Hassan             
+****************************************** 
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 555
+Enter product name
+> Motorola Mobile razor
+The new product: 555: motorola mobile razor stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 501
+Enter product name
+> Samsung Galaxy S20 FE
+The new product: 501: samsung galaxy s20 fe stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 502
+Enter product name
+> Apple iPhone 12
+The new product: 502: apple iphone 12 stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 503
+Enter product name
+> Apple iPhone 9
+The new product: 503: apple iphone 9 stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 504
+Enter product name
+> Motorola G9 Plus
+The new product: 504: motorola g9 plus stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 555
+Enter product name
+> Motorola Mobile razor 10
+ Duplicate id please type unique id to add new product
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> add
+ Add new product
+Enter product Id
+> 116
+Enter product name
+> 
+Product name can't be blank
+ Add new product
+Enter product Id
+> 116
+Enter product name
+> test blank sucessful
+The new product: 116: test blank sucessful stock level: 0  has added to stock
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> remove
+ Remove product
+Enter Product id
+> 555
+The product has been removed from Stock.
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> remove
+ Remove product
+Enter Product id
+> 999
+Please eneter valid product id; try  again Remove product
+Enter Product id
+> p
+not a number
+> 501
+The product has been removed from Stock.
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> print
+132: Clock Radio stock level: 0
+89: Mobile Phone stock level: 0
+23: Microwave Oven stock level: 0
+37: Sony Tv stock level: 0
+42: Toshiba TV stock level: 0
+45:  Samsung TV stock level: 0
+55: LG TV stock level: 0
+88: Apple TV stock level: 0
+99: Toshiba Walkman stock level: 0
+78:  Samsung Sond System stock level: 0
+502: apple iphone 12 stock level: 0
+503: apple iphone 9 stock level: 0
+504: motorola g9 plus stock level: 0
+116: test blank sucessful stock level: 0
+> deliver product
+Please enter product id
+> 501
+ product not found please enter valid id
+Please enter product id
+> 10
+ product not found please enter valid id
+Please enter product id
+> 502
+502: apple iphone 12 stock level: 0
+ Please Enter quantity
+> 10
+502: apple iphone 12 stock level: 10
+
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> deliver product
+Please enter product id
+> 502
+502: apple iphone 12 stock level: 10
+ Please Enter quantity
+> -5
+ ####### Please enetr positive value
+502: apple iphone 12 stock level: 10
+
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> sell
+#########Selling product#######
+ please entre product ID 
+> 502
+502: apple iphone 12 stock level: 10
+Please enter the quantity you would to sell
+> 2
+Available stock Level:10
+502: apple iphone 12 stock level: 8, after sale
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> sell
+#########Selling product#######
+ please entre product ID 
+> 502
+502: apple iphone 12 stock level: 8
+Please enter the quantity you would to sell
+> 10
+Available stock Level:8
+ #### Please do not order more than stock level thanks the required amount: 10 is more than stock: 8
+502: apple iphone 12 stock level: 8, after sale
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> sell
+#########Selling product#######
+ please entre product ID 
+> 502
+502: apple iphone 12 stock level: 8
+Please enter the quantity you would to sell
+> -5
+Available stock Level:8
+ #### Please enetr positive number
+502: apple iphone 12 stock level: 8, after sale
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> search product
+######### Search Product #######
+ please entre product ID 
+> 502
+502: apple iphone 12 stock level: 8
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> low stock
+###### Stock is running low ############
+## Stock in below quantity 4 ###########
+
+132: Clock Radio stock level: 0
+89: Mobile Phone stock level: 0
+23: Microwave Oven stock level: 0
+37: Sony Tv stock level: 0
+42: Toshiba TV stock level: 0
+45:  Samsung TV stock level: 0
+55: LG TV stock level: 0
+88: Apple TV stock level: 0
+99: Toshiba Walkman stock level: 0
+78:  Samsung Sond System stock level: 0
+503: apple iphone 9 stock level: 0
+504: motorola g9 plus stock level: 0
+116: test blank sucessful stock level: 0
+> 

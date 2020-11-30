@@ -19,6 +19,7 @@ public class StockManager
     public StockManager()
     {
         stock = new ArrayList<Product>();
+        
     }
     
     /**

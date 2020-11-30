@@ -25,6 +25,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -47,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606298206336</updated>
-      <workItem from="1606298207378" duration="601000" />
+      <workItem from="1606298207378" duration="6985000" />
     </task>
     <servers />
   </component>
@@ -55,13 +61,13 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="412" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606298304656">
+    <state x="412" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606310827232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="412" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1606298304656" />
-    <state x="463" y="90" key="FileChooserDialogImpl" timestamp="1606298804674">
+    <state x="412" y="241" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1606310827232" />
+    <state x="463" y="90" key="FileChooserDialogImpl" timestamp="1606322775879">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="90" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606298804674" />
+    <state x="463" y="90" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606322775879" />
   </component>
 </project>

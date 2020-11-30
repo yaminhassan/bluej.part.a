@@ -63,7 +63,8 @@ public class StockApp
      */
     private void executeMenuChoice(String choice)
     {
-        if(choice.equals(ADD))
+       
+           if(choice.equals(ADD))
         {
            addProduct();
         } 
@@ -109,6 +110,7 @@ public class StockApp
             
         }
         
+      
     }    
       
     /**
@@ -118,13 +120,10 @@ public class StockApp
     public void searchProduct()
     {
         System.out.println("######### Search Product #######");
-        System.out.println(" please entre product ID ");
-        String value = input.getInput();
-        try
-        {
-            int id = Integer.parseInt(value);
-            Product product = manager.findProduct(id);
-            if(product != null)
+        System.out.println(" please entre product ID ");        
+        int id = input.getIntegerInput();
+        Product product = manager.findProduct(id);
+        if(product != null)
             {
                 manager.printProduct(id);                
             }
@@ -132,12 +131,6 @@ public class StockApp
             {
                 System.out.println(" Product not found");           
             }
-        }
-        catch(NumberFormatException nfe)
-        {
-            System.out.println( "Please enter  an Integer");
-            searchProduct();
-        }
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
@@ -179,35 +172,24 @@ public class StockApp
     public void sellProduct()
     {
         System.out.println("#########Selling product#######");
-        System.out.println(" please entre product ID ");
-        String value = input.getInput();
-        try
-        {
-            int id = Integer.parseInt(value);
-            Product product = manager.findProduct(id);
-            if(product != null)
+        System.out.println(" please entre product ID ");        
+        int id = input.getIntegerInput();        
+        Product product = manager.findProduct(id);
+        if(product != null)
             {
                 manager.printProduct(id);
-                System.out.println("Please enter the quantity you would to sell");
-                String amount = input.getInput();
-                int quantity = Integer.parseInt(amount);
+                System.out.println("Please enter the quantity you would to sell");                 
+                int quantity = input.getIntegerInput();
                 manager.sellProduct(id, quantity);
             }
             else
             {
-                System.out.println(" Product not found");           
-            }
-        }
-        catch(NumberFormatException nfe)
-        {
-            System.out.println( "Please enter  an Integer");
-            sellProduct();
-        }
+                System.out.println(" Product not found");      
+            }              
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
-        executeMenuChoice(newInput);
-        
+        executeMenuChoice(newInput);        
     }
     
     /**
@@ -217,21 +199,11 @@ public class StockApp
     public void changeName()
     {
         System.out.println(" Change product name");
-        System.out.println("Enter the product id");
-        String value = input.getInput();
-        try
-        {
-            int id = Integer.parseInt(value);
-        
-            System.out.println("Enter new Name");
-            String name = input.getInput();
-            manager.changeProductName(id,name);           
-        }
-        catch(NumberFormatException nfe)
-        {
-             System.out.println( "Please enter  an Integer");
-             changeName();
-        }
+        System.out.println("Enter the product id");               
+        int id = input.getIntegerInput();        
+        System.out.println("Enter new Name");
+        String name = input.getInput();
+        manager.changeProductName(id,name);       
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
@@ -244,18 +216,14 @@ public class StockApp
      */
     public void deliverProduct()
     {
-        System.out.println("Please enter product id");
-        String value = input.getInput();       
-        int id = Integer.parseInt(value);
-        try
-        {
-            Product product = manager.findProduct(id);
-            if(product!=null)
+        System.out.println("Please enter product id");              
+        int id =input.getIntegerInput();        
+        Product product = manager.findProduct(id);
+        if(product!=null)
             {
                 System.out.println(product);
-                System.out.println(" Please Enter quantity");
-                String amount = input.getInput();
-                int quantity = Integer.parseInt(amount);
+                System.out.println(" Please Enter quantity");                
+                int quantity = input.getIntegerInput();
                 product.increaseQuantity(quantity);
                 System.out.println(product);
                 System.out.println();                
@@ -264,13 +232,7 @@ public class StockApp
             {
                 System.out.println(" product not found please enter valid id");                 
                 deliverProduct();
-             }
-        }
-        catch(NumberFormatException nfe)
-        {
-            System.out.println("Please enter  an Integer");
-            deliverProduct();
-        }
+            }        
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
@@ -295,13 +257,10 @@ public class StockApp
     public void removeProduct()
     {
         System.out.println(" Remove product");
-        System.out.println("Enter Product id");        
-        String value = input.getInput();
-        try
-        {
-            int id = Integer.parseInt(value);
-            Product product = manager.findProduct(id);
-            if(product !=null)
+        System.out.println("Enter Product id");               
+        int id = input.getIntegerInput();
+        Product product = manager.findProduct(id);
+        if(product !=null)
             {
                 manager.removeProduct(id);
             }
@@ -309,13 +268,7 @@ public class StockApp
             {
                 System.out.print("Please eneter valid product id; try  again");
                 removeProduct();
-            }
-        }
-        catch(NumberFormatException nfe)
-        {
-            System.out.println( "Please enter Integer");
-            removeProduct();
-        }
+            }        
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
@@ -328,30 +281,20 @@ public class StockApp
     public void addProduct()
     {
         System.out.println(" Add new product");        
-        System.out.println("Enter product Id");        
-        String value = input.getInput();
-        try
-        {        
-            int id = Integer.parseInt(value);
-            System.out.println( "Enter product name");
-            String name = input.getInput();
-            if(name.isEmpty())
+        System.out.println("Enter product Id");                     
+        int id = input.getIntegerInput();
+        System.out.println( "Enter product name");
+        String name = input.getInput();
+        if(name.isEmpty())
             {
                 System.out.println( "Product name can't be blank");
                 addProduct();
             }
             else
-            {
-                
-            Product product = new Product(id, name);        
-            manager.addProduct(product);
-            }
-        }
-        catch(NumberFormatException nfe)
-        {
-            System.out.println( "Please enter  an Integer to add product");
-            addProduct();
-        }
+            {                
+                Product product = new Product(id, name);        
+                manager.addProduct(product);
+            }       
         System.out.println();
         printMenuChoices();
         String newInput = input.getInput();
