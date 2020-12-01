@@ -354,3 +354,20 @@ Deliver product:   Add quantity of existing products ####
 504: motorola g9 plus stock level: 0
 116: test blank sucessful stock level: 0
 > 
+######### Search Product by Keyword #######
+ please entre product keyword 
+> Sam
+45:  Samsung TV stock level: 0
+
+########### Add:   Add a new product ####################
+######## Remove:   Remove an old product ################
+######### Print:   Print all products ###################
+########## Sell:   Sell existing products ###############
+### Change name:   Change name of existing products #####
+Deliver product:   Add quantity of existing products ####
+########## Quit:   Quit from the program and exit #######
+####### Restock:   Restock all low level stock ##########
+##### Low stock:   Check low stock with quantity ########
+ Search Product:   Search product with its name #########
+
+> 

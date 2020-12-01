@@ -32,7 +32,7 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         
-        String inputLine = reader.nextLine().trim().toLowerCase();
+        String inputLine = reader.nextLine().trim();
         
         return inputLine;
         

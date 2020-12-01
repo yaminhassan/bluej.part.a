@@ -19,6 +19,7 @@ public class StockApp
     public static final String RESTOCK = "restock";
     public static final String CHECK_LOW_STOCK= "low stock";
     public static final String SEARCH_PRODUCT = "search product";
+    public static final String SEARCH_KEYWORD = "keyword";
     public static final String DELIVER_PRODUCT = "deliver product";
     
     private InputReader input;
@@ -45,7 +46,7 @@ public class StockApp
         {
             printHeading();
             printMenuChoices();
-            String choice=input.getInput();
+            String choice=input.getInput().toLowerCase();
             if(choice.equals(QUIT))
             {
                 finished = true;
@@ -62,9 +63,8 @@ public class StockApp
      * to user to execute a task.
      */
     private void executeMenuChoice(String choice)
-    {
-       
-           if(choice.equals(ADD))
+    {       
+        if(choice.equals(ADD))
         {
            addProduct();
         } 
@@ -101,18 +101,36 @@ public class StockApp
         {
             deliverProduct();
         }
+        else if(choice.equals(SEARCH_KEYWORD))
+        {
+            keywordSearch();
+        }
         else
         {
             printMenuChoices();
             System.out.println(" Please type from one of the valid commands above");
-            String newInput = input.getInput();
+            String newInput = input.getInput().toLowerCase();
             executeMenuChoice(newInput);
             
         }
         
       
     }    
-      
+    /**
+     * The keyword search method search the word by its keyword.
+     */ 
+    public void keywordSearch()
+    {
+        System.out.println("######### Search Product by Keyword #######");
+        System.out.println(" please entre product keyword ");
+        String newInput = input.getInput();
+        manager.search(newInput);
+        System.out.println();
+        printMenuChoices();
+        String endInput = input.getInput().toLowerCase();
+        executeMenuChoice(endInput);
+        
+    }
     /**
      * The search method search the product by
      * its name print it on the terminal.
@@ -133,7 +151,7 @@ public class StockApp
             }
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);
         
     }
@@ -148,7 +166,7 @@ public class StockApp
         System.out.println("## Stock in below quantity 4 ###########");
         System.out.println();
         manager.printLowStock();    
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);
     }
     
@@ -161,7 +179,7 @@ public class StockApp
         manager.reStockLowStock();
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);
     }
     
@@ -188,7 +206,7 @@ public class StockApp
             }              
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);        
     }
     
@@ -202,11 +220,11 @@ public class StockApp
         System.out.println("Enter the product id");               
         int id = input.getIntegerInput();        
         System.out.println("Enter new Name");
-        String name = input.getInput();
+        String name = input.getInput().toLowerCase();
         manager.changeProductName(id,name);       
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);          
     }
     
@@ -235,7 +253,7 @@ public class StockApp
             }        
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);        
     }
     
@@ -246,7 +264,7 @@ public class StockApp
     public void printAll()
     {
         manager.printProductDetails();
-        String printNewInput = input.getInput();
+        String printNewInput = input.getInput().toLowerCase();
         executeMenuChoice(printNewInput);
     }
     
@@ -271,7 +289,7 @@ public class StockApp
             }        
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput); 
     }
     
@@ -284,7 +302,7 @@ public class StockApp
         System.out.println("Enter product Id");                     
         int id = input.getIntegerInput();
         System.out.println( "Enter product name");
-        String name = input.getInput();
+        String name = input.getInput().toLowerCase();
         if(name.isEmpty())
             {
                 System.out.println( "Product name can't be blank");
@@ -297,7 +315,7 @@ public class StockApp
             }       
         System.out.println();
         printMenuChoices();
-        String newInput = input.getInput();
+        String newInput = input.getInput().toLowerCase();
         executeMenuChoice(newInput);
     }
     
